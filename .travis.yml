@@ -1,6 +1,6 @@
 sudo: required
 
-services: :
+services:
   - docker
 
 before_install:
@@ -8,7 +8,7 @@ before_install:
 
 
 # CI=true => https://stackoverflow.com/questions/50930044/what-does-export-ci-true-do-in-this-create-react-app-deploy-script
-  script:
-    - docker run -e CI=true ioanniskatri/docker-react npm run test
+script:
+  - docker run -e CI=true USERNAME/docker-react npm run test
 
 

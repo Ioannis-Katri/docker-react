@@ -1,0 +1,14 @@
+sudo: required
+
+services: :
+  - docker
+
+before_install:
+  - docker build -t ioanniskatri/docker-react -f Dockerfile.dev .
+
+
+# CI=true => https://stackoverflow.com/questions/50930044/what-does-export-ci-true-do-in-this-create-react-app-deploy-script
+  script:
+    - docker run -e CI=true ioanniskatri/docker-react npm run test
+
+
